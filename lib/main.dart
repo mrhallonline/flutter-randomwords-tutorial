@@ -10,6 +10,9 @@ class MyApp extends StatelessWidget {
     
     return MaterialApp(
       title: 'Startup Name Generator',
+      theme: ThemeData(          
+        primaryColor: Colors.white,
+      ), 
       home: RandomWords(),
       
     );
@@ -18,7 +21,7 @@ class MyApp extends StatelessWidget {
 class RandomWordsState extends State<RandomWords> {
    void _pushSaved() {
       Navigator.of(context).push(
-        MaterialPageRoute<void>(   // Add 20 lines from here...
+        MaterialPageRoute<void>(   
       builder: (BuildContext context) {
         final Iterable<ListTile> tiles = _saved.map(
           (WordPair pair) {
@@ -36,7 +39,7 @@ class RandomWordsState extends State<RandomWords> {
             tiles: tiles,
           )
           .toList();
-       return Scaffold(         // Add 6 lines from here...
+       return Scaffold(         
           appBar: AppBar(
             title: Text('Saved Suggestions'),
           ),
@@ -54,7 +57,7 @@ class RandomWordsState extends State<RandomWords> {
      return Scaffold(
     appBar: AppBar(
       title: Text('Startup Name Generator'),
-      actions: <Widget>[      // Add 3 lines from here...
+      actions: <Widget>[      
           IconButton(icon: Icon(Icons.list), onPressed: _pushSaved),
         ],   
     ),
@@ -85,7 +88,7 @@ Widget _buildRow(WordPair pair) {
       alreadySaved ? Icons.favorite : Icons.favorite_border,
       color: alreadySaved ? Colors.red : null,  
     ),
-    onTap: () {      // Add 9 lines from here...
+    onTap: () {      
       setState(() {
         if (alreadySaved) {
           _saved.remove(pair);

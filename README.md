@@ -1,6 +1,6 @@
 # startup_namer
 
-Tutorial app for learning Flutter.
+Tutorial app for learning Flutter. The tutorial wasn't very hands on, but gave me an idea about the sequence of building in Flutter.
 
 ## Getting Started
 
